@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<title>Shuffling</title>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="https://fonts.googleapis.com/css?family=Architects+Daughter|Poppins" rel="stylesheet">
+		<link rel="stylesheet" href="css/bootstrap.css">
+		<link rel="stylesheet" href="css/cached.css">
+		<link rel="stylesheet" href="css/main.css">
+		<link rel="shortcut icon" href="icon.ico">
+	</head>
+	<body class="bg-buscador">
+		<div class="container text-center">
+			<div class="row">
+				<div class="col-xs-3">
+					<div id="perfil-menu" class="foto-perfil">
+						<img src="img/user.svg" alt="foto de perfil" id="logo-usuario">
+					</div>
+				</div>
+				<div class="col-xs-9">
+					<form id="search-form">
+						<div class="input-group buscador">
+							<span class="input-group-addon" id="buscar"><i class="glyphicon glyphicon-search"></i></span>
+							<input type="text" id="query" class="form-control" placeholder="Ingresa el nombre de tu artista...">
+							<span class="input-group-addon" id="searchVoice"><i class="glyphicon glyphicon-headphones"></i></span>
+						</div>
+					</form>
+				</div>
+			</div>
+			<main>
+				<div id="conversation"></div>
+			</main>
+			<div class="row row-resultados">
+				<div class="col-xs-12">
+					<div id="resultados"></div>
+				</div>
+			</div>
+		</div>
+		<div class="absolute none"></div>
+		<div id="menu" class="none">
+			<div class="contenedor foto-perfil">
+				<a href="perfil.html">
+					<img src="img/user.svg" class="user" id="user">
+				</a>
+			</div>
+			<span id="name-user"></span>
+			<div class="lista" id="map">
+				<span class="glyphicon glyphicon-home menu-icono" aria-hidden="true"></span>
+				<p class="texto-lista">Inicio</p>
+			</div>
+			<div class="lista regalo-1">
+				<span class="glyphicon glyphicon-heart regalo" aria-hidden="true"></span>
+				<p class="texto-lista">Mis favoritas</p>
+			</div>
+			<div class="lista">
+				<span class="glyphicon glyphicon-headphones menu-icono" aria-hidden="true"></span>
+				<p class="texto-lista">Playlist</p>
+			</div>
+			<div class="lista">
+				<span class="glyphicon glyphicon-star menu-icono" aria-hidden="true"></span>
+				<p class="texto-lista">Radio</p>
+			</div>
+			<div class="lista">
+				<span class="glyphicon glyphicon-question-sign menu-icono" aria-hidden="true"></span>
+				<p class="texto-lista">Ayuda</p>
+			</div>
+			<div class="lista">
+				<span class="glyphicon glyphicon-cog menu-icono" aria-hidden="true"></span>
+				<p class="texto-lista">Configuración</p>
+			</div>
+		</div>
+
+		<script type="text/javascript" src="js/handlebars-v4.0.0.js"></script>
+		<script type="text/x-handlebars-template" id="resultados-template">
+			{{#each albums.items}}
+			<div style="background-image:url({{images.0.url}})" data-album-id="{{id}}" class="cover"></div>
+			{{/each}}
+		</script>
+		<script type="text/javascript" src="js/jquery.js"></script>
+		<script type="text/javascript" src="js/annyang.min.js"></script>
+		<script type="text/javascript" src="js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="js/buscador.js"></script>
+		<script type="text/javascript" src="js/app.js"></script>
+	</body>
+</html>
